@@ -1,10 +1,14 @@
 import tictactoe from "./game"
-import { action, board, valueMove } from "./utils"
+import { action, board, valueMove, orderedActions } from "./utils"
 
 function miniMax(game: tictactoe) {
   // Takes a game as an input, returns the best move for the player having his turn
   // Limit of action set to 5 means that will look into the next 5 turns
   let board = game.getBoardCopy()
+
+  const flatBoard = board.flat(3)
+  if (flatBoard.filter((cell) => cell == null).length == 9) return orderedActions[Math.floor(Math.random() * orderedActions.length)]
+
   if (game.getIfTerminal(board)) return null
 
   const limit = 5
