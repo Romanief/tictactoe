@@ -19,5 +19,5 @@ document.addEventListener("DOMContentLoaded", () => {
   playO?.addEventListener("click", () => startGame(game, "O"))
   playO?.classList.add("cursor-pointer")
   playX?.classList.add("cursor-pointer")
-  message("Choose wether to play as X or as O")
+  message("Choose whether to play as X or as O")
 })
