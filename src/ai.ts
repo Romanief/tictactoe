@@ -7,7 +7,7 @@ function miniMax(game: tictactoe) {
   let board = game.getBoardCopy()
 
   const flatBoard = board.flat(3)
-  if (flatBoard.filter((cell) => cell == null).length == 9) return orderedActions[Math.floor(Math.random() * orderedActions.length)]
+  if (flatBoard.filter((cell) => cell == null).length > 7) return orderedActions[Math.floor(Math.random() * orderedActions.length)]
 
   if (game.getIfTerminal(board)) return null
 
